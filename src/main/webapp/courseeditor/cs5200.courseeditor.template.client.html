@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Editor</title>
+    <link href="./courseeditor.style.client.css" rel="stylesheet"/>
+    <link href="../webapp.universal.stylesheet.css" rel="stylesheet"/>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="container-fluid">
+    <!-- Navigation Bar (Top of Page) Start -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html">NEUcourses</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Course List (Home)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../profile/profile.template.client.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login/login.template.client.html">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation Bar (Top of Page) End -->
+</div>
+
+<div class="container-fluid">
+    <div>
+        <h1>Course Editor</h1>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Modules</span>
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Module 1: SQL
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Module 2: React
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Module 3: Node.js
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Module 4: MongoDB
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">CS5200 Database Management Systems</h1>
+                <div class="container-fluid">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Topic 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Topic 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Topic 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Topic 4</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group me-1">
+                        <button type="button" class="btn-outline-success">Add Widget</button>
+                        <button type="button" class="btn-outline-danger">Remove Widget</button>
+                    </div>
+                    <div class="btn-group me-2">
+                        <button type="button" class="btn btn-sm btn-success">Save</button>
+                        <button type="button" class="btn btn-sm btn-danger">Revert</button>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Lesson Information</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>Lesson</th>
+                            <th>Owned By</th>
+                            <th>Date Last Modified</th>
+                            <th>Time Last Modified</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Relational Database Design</td>
+                            <td>Me</td>
+                            <td>January 14, 2021</td>
+                            <td>3:15 P.M.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>

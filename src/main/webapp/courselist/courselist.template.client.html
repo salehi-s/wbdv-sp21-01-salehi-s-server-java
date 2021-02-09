@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+    <link href="./courselist.style.client.css" rel="stylesheet"/>
+    <link href="../webapp.universal.stylesheet.css" rel="stylesheet"/>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="container-fluid">
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="../index.html">NEUcourses</a>
+        <input class="form-control form-control-dark w-80" type="text" placeholder="Search Classes" aria-label="Search">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item">
+                <a class="nav-link" href="../courselist/courselist.template.client.html">Course List (Home)</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../profile/profile.template.client.html">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../login/login.template.client.html">Log Out</a>
+            </li>
+        </ul>
+    </header>
+</div>
+
+<div class="container-fluid">
+    <div>
+        <h1>Course List</h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr class="table-primary">
+                    <th>Title</th>
+                    <th>Owned By</th>
+                    <th>Date Last Modified</th>
+                    <th>Time Last Modified</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr onclick="document.location='../courseeditor/cs5610.courseeditor.template.client.html'">
+                    <td>CS5610 Web Development</td>
+                    <td>Me</td>
+                    <td>January 12, 2021</td>
+                    <td>4:30 P.M.</td>
+                </tr>
+
+                <tr onclick="document.location='../courseeditor/cs5200.courseeditor.template.client.html'">
+                    <td>CS5200 Database Management Systems</td>
+                    <td>Me</td>
+                    <td>January 14, 2021</td>
+                    <td>3:15 P.M.</td>
+                </tr>
+
+                <tr onclick="document.location='../courseeditor/cs5600.courseeditor.template.client.html'">
+                    <td>CS5600 Computer Systems</td>
+                    <td>Me</td>
+                    <td>December 25, 2020</td>
+                    <td>9:15 P.M.</td>
+                </tr>
+
+                <tr onclick="document.location='../courseeditor/cs5500.courseeditor.template.client.html'">
+                    <td>CS5500 Foundations of Software Engineering</td>
+                    <td>Me</td>
+                    <td>November 13, 2020</td>
+                    <td>10:45 A.M.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

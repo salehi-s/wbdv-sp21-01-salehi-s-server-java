@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="./profile.style.client.css" rel="stylesheet"/>
+    <link href="../webapp.universal.stylesheet.css" rel="stylesheet"/>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="container-fluid">
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="../index.html">NEUcourses</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item">
+                <a class="nav-link" href="../courselist/courselist.template.client.html">Course List (Home)</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../profile/profile.template.client.html">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../login/login.template.client.html">Log Out</a>
+            </li>
+        </ul>
+    </header>
+</div>
+
+<div class="container-fluid">
+    <div>
+        <h2>Changes successfully saved!</h2>
+    </div>
+
+    <div>
+        <h1>Profile</h1>
+    </div>
+
+    <form>
+        <div class="container-fluid">
+            <div class="form-group row">
+                <label for="username" class="col-sm-2 col-form-label">
+                    Username:</label>
+                <div class="col-sm-10">
+                    <input class="form-control wbdv-field wbdv-username"
+                           id="username"
+                           placeholder="Alice"
+                           readonly>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="form-group row">
+                <label for="phone" class="col-sm-2 col-form-label">
+                    Phone Number:</label>
+                <div class="col-sm-10">
+                    <input class="form-control wbdv-field wbdv-phone"
+                           id="phone"
+                           placeholder="781-435-2233">
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">
+                    E-Mail Address:</label>
+                <div class="col-sm-10">
+                    <input class="form-control wbdv-field wbdv-email"
+                           id="email"
+                           placeholder="alice@wonderland.com">
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="form-group row">
+                <label for="birthdate" class="col-sm-2 col-form-label">
+                    Date of Birth:</label>
+                <div class="col-sm-10">
+                    <input class="form-control wbdv-field wbdv-birthdate"
+                           id="birthdate"
+                           placeholder="MM/DD/YYYY">
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="form-group row">
+                <label for="role" class="col-sm-2 col-form-label">
+                    Role:</label>
+                <div class="col-sm-10">
+                    <select class="form-select form-select-sm" id="role" readonly>
+                        <option selected value="N/A">Choose Role</option>
+                        <option value="Faculty">Faculty</option>
+                        <option value="Student">Student</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="container-fluid">
+        <a href="./profileupdate.template.client.html"><button class="btn btn-success" id="updateBtn">Update</button></a>
+        <a href="../index.html"><button class="btn btn-danger" id="logoutBtn">Logout</button></a>
+    </div>
+</div>
+</body>
+</html>

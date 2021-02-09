@@ -1,0 +1,22 @@
+h1 {
+    background-color: #a20000;
+    color: #ffffff;
+    text-align: center;
+    border: 5px transparent;
+    padding: 5px;
+}
+
+div {
+    text-align: center;
+    border: 5px transparent;
+    padding: 5px;
+}
+
+nav {
+    border: 5px transparent;
+    padding: 5px;
+}
+
+tbody tr {
+    cursor: pointer;
+}

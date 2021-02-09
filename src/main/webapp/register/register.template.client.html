@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="./register.style.client.css" rel="stylesheet"/>
+    <link href="../webapp.universal.stylesheet.css" rel="stylesheet"/>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">NEUcourses</a>
+    </nav>
+</div>
+
+<div class="container-fluid">
+    <div>
+        <h1>Register</h1>
+    </div>
+
+    <form>
+    <div class="container-fluid">
+        <div class="form-group row">
+            <label for="username" class="col-sm-2 col-form-label">
+                Username: </label>
+            <div class="col-sm-10">
+                <input class="form-control wbdv-field wbdv-username"
+                       id="username"
+                       placeholder="Alice">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="form-group row">
+            <label for="password" class="col-sm-2 col-form-label">
+                Password: </label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control wbdv-field wbdv-password"
+                       id="password" placeholder="secretpass123">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="form-group row">
+            <label for="verifypassword" class="col-sm-2 col-form-label">
+                Verify Password: </label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control wbdv-field wbdv-password"
+                       id="verifypassword" placeholder="secretpass123">
+            </div>
+        </div>
+    </div>
+
+        <div class="container-fluid">
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">
+                    E-Mail Address: </label>
+                <div class="col-sm-10">
+                    <input class="form-control wbdv-field wbdv-email"
+                           id="email"
+                           placeholder="alice@wonderland.com">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="container-fluid">
+        <a href="../login/login.template.client.html"><button class="btn btn-outline-danger btn-block wbdv-login" type="button">Return to Login Page</button></a>
+        <a href="../profile/profile.template.client.html"><button class="btn btn-success btn-block" id="registerBtn">Register</button></a>
+        <a href="../index.html"><button class="btn btn-danger btn-block wbdv-cancel" type="button">Cancel (Return to Home)</button></a>
+    </div>
+</div>
+</body>
+</html>
