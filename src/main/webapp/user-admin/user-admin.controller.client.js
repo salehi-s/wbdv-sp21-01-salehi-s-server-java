@@ -24,12 +24,14 @@ var $roleField
 var $tableBody
 var $createButton
 var $updateButton
-var userArrayDummy
+var allUsersArray
 var userService = new AdminUserServiceClient()
 
 function addUser(table, userArray, user) {
-    userArray.push(user)
-    renderUsers(table, userArray)
+    userService.createUser(user).then(function (actualUser) {
+        userArray.push(actualUser)
+        renderUsers(table, userArray)
+    })
 }
 
 function renderUsers(table, userArray) {
@@ -50,9 +52,13 @@ function renderUsers(table, userArray) {
     }
     $(".wbdv-button-remove").click(function (event) {
         var removeButton = $(event.target)
-        var rBID = parseInt(removeButton.attr("id").slice(-1))
-        userArray.splice(rBID, 1)
-        renderUsers(table, userArray)
+        var rBIndex = parseInt(removeButton.attr("id").slice(-1))
+        var rBID = userArray[rBIndex]._id
+
+        userService.deleteUser(rBID).then(function (status) {
+            userArray.splice(rBIndex, 1)
+            renderUsers(table, userArray)
+        })
     })
 }
 
@@ -65,7 +71,7 @@ function main() {
     $tableBody = $("tbody")
     $createButton = $(".wbdv-button-create")
     $updateButton = $(".wbdv-button-update")
-    userArrayDummy = []
+    allUsersArray = []
 
     $createButton.click(function () {
         var newUser = {
@@ -75,7 +81,7 @@ function main() {
             lastName: $lastNameField.val(),
             role: $roleField.val()
         }
-        addUser($tableBody, userArrayDummy, newUser)
+        addUser($tableBody, allUsersArray, newUser)
         $usernameField.val("")
         $passwordField.val("")
         $firstNameField.val("")
@@ -83,7 +89,10 @@ function main() {
         $roleField.val("FACULTY")
     })
 
-    userService.findAllUsers()
+    userService.findAllUsers().then(function (allUsers) {
+        allUsersArray = allUsers
+        renderUsers($tableBody, allUsersArray)
+    })
 }
 
 $(main)
