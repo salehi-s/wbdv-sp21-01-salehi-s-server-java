@@ -21,12 +21,10 @@ var $passwordField
 var $firstNameField
 var $lastNameField
 var $roleField
-var tableBody
+var $tableBody
 var $createButton
-
-var userArrayDummy = []
-
-var updateButton = jQuery(".wbdv-button-update")
+var $updateButton
+var userArrayDummy
 
 function addUser(table, userArray, user) {
     userArray.push(user)
@@ -49,8 +47,8 @@ function renderUsers(table, userArray) {
                            </span></td>
                        </tr>`)
     }
-    jQuery(".wbdv-button-remove").click(function (event) {
-        var removeButton = jQuery(event.target)
+    $(".wbdv-button-remove").click(function (event) {
+        var removeButton = $(event.target)
         var rBID = parseInt(removeButton.attr("id").slice(-1))
         userArray.splice(rBID, 1)
         renderUsers(table, userArray)
@@ -63,8 +61,10 @@ function main() {
     $firstNameField = $(".wbdv-field-firstName")
     $lastNameField = $(".wbdv-field-lastName")
     $roleField = $(".wbdv-field-role")
-    tableBody = jQuery("tbody")
+    $tableBody = $("tbody")
     $createButton = $(".wbdv-button-create")
+    $updateButton = $(".wbdv-button-update")
+    userArrayDummy = []
 
     $createButton.click(function () {
         var newUser = {
@@ -74,7 +74,7 @@ function main() {
             lastName: $lastNameField.val(),
             role: $roleField.val()
         }
-        addUser(tableBody, userArrayDummy, newUser)
+        addUser($tableBody, userArrayDummy, newUser)
         $usernameField.val("")
         $passwordField.val("")
         $firstNameField.val("")
@@ -83,4 +83,4 @@ function main() {
     })
 }
 
-jQuery(main)
+$(main)
