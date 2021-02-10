@@ -49,16 +49,18 @@ function renderUsers(table, userArray) {
                            <td class="wbdv-last-name">${user.lastName}</td>
                            <td class="wbdv-role">${user.role}</td>
                            <td class="wbdv-actions"><span class="pull-right">
-                               <button class="btn btn-outline-dark wbdv-button-remove" id="${i}"><i class="fa-2x fa fa-times wbdv-remove"> Remove</i></button>
-                               <button class="btn btn-outline-dark wbdv-button-edit"><i class="fa-2x fa fa-pencil wbdv-edit"> Edit</i></button>
+                               <button class="btn btn-outline-dark wbdv-button-remove" id="wbdv-button-remove ${i}"><i class="fa-2x fa fa-times wbdv-remove" id="wbdv-icon-remove ${i}"> Remove</i></button>
+                               <button class="btn btn-outline-dark wbdv-button-edit" id="wbdv-button-edit ${i}"><i class="fa-2x fa fa-pencil wbdv-edit" id="wbdv-icon-edit ${i}"> Edit</i></button>
                            </span></td>
                        </tr>`)
     }
-    jQuery(".wbdv-remove").click(function (event) {
+    jQuery(".wbdv-button-remove").click(function (event) {
         console.log(event.target)
         var removeButton = jQuery(event.target)
         var rBClass = removeButton.attr("class")
+        var rBID = removeButton.attr("id")
         console.log(rBClass)
+        console.log(rBID)
     })
 }
 
