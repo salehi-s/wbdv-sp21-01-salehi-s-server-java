@@ -8,6 +8,8 @@ var $roleField // Dropdown Selection Menu for Selecting Role
 var $tableBody // Table Body of User Table
 var $createButton // Button for Creating New User
 var $updateButton // Button for Updating Attributes of Existing User
+var $removeButton // Button for Removing Existing User
+var $editButton // Button for Selecting Existing User for Updating Attributes
 var allUsersArray // Array of All Users
 var selectedUser // Currently Selected User (via Edit Button)
 var userService // Service for Interacting with Server
@@ -71,13 +73,13 @@ function renderUsers(table, userArray) {
                            <td class="wbdv-role">${user.role}</td>
                            <td class="wbdv-actions">
                                <span class="pull-right">
-                                   <button class="btn btn-outline-dark wbdv-button-remove"
+                                   <button class="btn btn-sm btn-outline-dark wbdv-button-remove"
                                            id="wbdv-button-remove-${i}">
                                        <i class="fa-2x fa fa-times wbdv-icon-remove"
                                           id="wbdv-icon-remove-${i}"> Remove
                                        </i>
                                    </button>
-                                   <button class="btn btn-outline-dark wbdv-button-edit"
+                                   <button class="btn btn-sm btn-outline-dark wbdv-button-edit"
                                            id="wbdv-button-edit-${user._id}">
                                        <i class="fa-2x fa fa-pencil wbdv-icon-edit"
                                           id="wbdv-icon-edit-${i}"> Edit
@@ -130,6 +132,8 @@ function main() {
     $tableBody = $("tbody")
     $createButton = $(".wbdv-button-create")
     $updateButton = $(".wbdv-button-update")
+    $removeButton = $(".wbdv-button-remove")
+    $editButton = $(".wbdv-button-edit")
     allUsersArray = []
     selectedUser = null
     userService = new AdminUserServiceClient()
