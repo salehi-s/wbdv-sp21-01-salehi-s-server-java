@@ -41,6 +41,12 @@ function updateUser() {
         allUsersArray[userIndex] = selectedUser
         renderUsers($tableBody, allUsersArray)
     })
+
+    $usernameField.val("")
+    $passwordField.val("")
+    $firstNameField.val("")
+    $lastNameField.val("")
+    $roleField.val("FACULTY")
 }
 
 // Render Users Function

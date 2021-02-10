@@ -1,11 +1,17 @@
+/*
+Function AdminUserServiceClient() is used to initialize a new user service variable
+in the user-admin controller
+*/
+
 function AdminUserServiceClient() {
-    this.createUser = createUser;
-    this.findAllUsers = findAllUsers;
-    this.findUserById = findUserById;
-    this.deleteUser = deleteUser;
-    this.updateUser = updateUser;
-    this.url = 'https://wbdv-generic-server.herokuapp.com/api/salehi.s/users';
-    var self = this;
+    this.createUser = createUser
+    this.findAllUsers = findAllUsers
+    this.deleteUser = deleteUser
+    this.updateUser = updateUser
+    this.url = 'https://wbdv-generic-server.herokuapp.com/api/salehi.s/users' // Server URL
+    var self = this
+
+    // Send a new user to the server
 
     function createUser(user) {
         return fetch(self.url, {
@@ -19,15 +25,15 @@ function AdminUserServiceClient() {
         })
     }
 
+    // Find all existing users in the server
+
     function findAllUsers() {
         return fetch(self.url).then(function (response) {
             return response.json()
         })
     }
 
-    function findUserById(userId) {
-
-    }
+    // Update the attributes of an existing user in the server
 
     function updateUser(userId, user) {
         return fetch(`${self.url}/${userId}`, {
@@ -38,6 +44,8 @@ function AdminUserServiceClient() {
             body: JSON.stringify(user)
         }).then(response => response.json())
     }
+
+    // Remove an existing user from the server
 
     function deleteUser(userId) {
         return fetch(`${self.url}/${userId}`, {method: 'DELETE'})
