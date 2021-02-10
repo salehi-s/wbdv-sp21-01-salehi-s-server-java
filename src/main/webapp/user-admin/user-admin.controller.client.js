@@ -36,6 +36,7 @@ function addUser(table, userArray, user) {
 
 function renderUsers(table, userArray) {
     table.empty()
+
     for (var i = 0; i < userArray.length; i++) {
         var user = userArray[i]
         table.prepend(`<tr class="wbdv-template wbdv-user wbdv-hidden">
@@ -46,10 +47,11 @@ function renderUsers(table, userArray) {
                            <td class="wbdv-role">${user.role}</td>
                            <td class="wbdv-actions"><span class="pull-right">
                                <button class="btn btn-outline-dark wbdv-button-remove" id="wbdv-button-remove-${i}"><i class="fa-2x fa fa-times wbdv-icon-remove" id="wbdv-icon-remove-${i}"> Remove</i></button>
-                               <button class="btn btn-outline-dark wbdv-button-edit" id="wbdv-button-edit-${i}"><i class="fa-2x fa fa-pencil wbdv-icon-edit" id="wbdv-icon-edit-${i}"> Edit</i></button>
+                               <button class="btn btn-outline-dark wbdv-button-edit" id="wbdv-button-edit-${user._id}"><i class="fa-2x fa fa-pencil wbdv-icon-edit" id="wbdv-icon-edit-${i}"> Edit</i></button>
                            </span></td>
                        </tr>`)
     }
+
     $(".wbdv-button-remove").click(function (event) {
         var removeButton = $(event.target)
         var rBIndex = parseInt(removeButton.attr("id").slice(-1))
@@ -59,6 +61,18 @@ function renderUsers(table, userArray) {
             userArray.splice(rBIndex, 1)
             renderUsers(table, userArray)
         })
+    })
+
+    $(".wbdv-button-edit").click(function (event) {
+        var editButton = $(event.target)
+        var eBIndex = parseInt(editButton.attr("id").slice(-1))
+        var eBUser = userArray[eBIndex]
+
+        $usernameField.val(eBUser.username)
+        $passwordField.val(eBUser.password)
+        $firstNameField.val(eBUser.firstName)
+        $lastNameField.val(eBUser.lastName)
+        $roleField.val(eBUser.role)
     })
 }
 
