@@ -25,12 +25,27 @@ var $tableBody
 var $createButton
 var $updateButton
 var allUsersArray
-var userService = new AdminUserServiceClient()
+var selectedUser
+var userService
 
 function addUser(table, userArray, user) {
     userService.createUser(user).then(function (actualUser) {
         userArray.push(actualUser)
         renderUsers(table, userArray)
+    })
+}
+
+function updateUser() {
+    selectedUser.username = $usernameField.val()
+    selectedUser.password = $passwordField.val()
+    selectedUser.firstName = $firstNameField.val()
+    selectedUser.lastName = $lastNameField.val()
+    selectedUser.role = $roleField.val()
+
+    userService.updateUser(selectedUser._id, selectedUser).then(function (status) {
+        var userIndex = allUsersArray.findIndex(user => user._id === selectedUser._id)
+        allUsersArray[userIndex] = selectedUser
+        renderUsers($tableBody, allUsersArray)
     })
 }
 
@@ -66,13 +81,13 @@ function renderUsers(table, userArray) {
     $(".wbdv-button-edit").click(function (event) {
         var editButton = $(event.target)
         var eBIndex = parseInt(editButton.attr("id").slice(-1))
-        var eBUser = userArray[eBIndex]
+        selectedUser = userArray[eBIndex]
 
-        $usernameField.val(eBUser.username)
-        $passwordField.val(eBUser.password)
-        $firstNameField.val(eBUser.firstName)
-        $lastNameField.val(eBUser.lastName)
-        $roleField.val(eBUser.role)
+        $usernameField.val(selectedUser.username)
+        $passwordField.val(selectedUser.password)
+        $firstNameField.val(selectedUser.firstName)
+        $lastNameField.val(selectedUser.lastName)
+        $roleField.val(selectedUser.role)
     })
 }
 
@@ -86,6 +101,8 @@ function main() {
     $createButton = $(".wbdv-button-create")
     $updateButton = $(".wbdv-button-update")
     allUsersArray = []
+    selectedUser = null
+    userService = new AdminUserServiceClient()
 
     $createButton.click(function () {
         var newUser = {
@@ -102,6 +119,8 @@ function main() {
         $lastNameField.val("")
         $roleField.val("FACULTY")
     })
+
+    $updateButton.click(updateUser)
 
     userService.findAllUsers().then(function (allUsers) {
         allUsersArray = allUsers
