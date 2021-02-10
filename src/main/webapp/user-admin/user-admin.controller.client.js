@@ -1,32 +1,24 @@
-/*(function () {
-    var $usernameFld, $passwordFld;
-    var $firstNameFld, $lastNameFld, $roleFld;
-    var $removeBtn, $editBtn, $createBtn;
-    var $userRowTemplate, $tbody;
-    var userService = new AdminUserServiceClient();
-    $(main);
+// Controller Variables
 
-    function main() { … }
-    function createUser() { … }
-    function deleteUser() { … }
-    function selectUser() { … }
-    function updateUser() { … }
-    function renderUsers(users) { … }
-    function findAllUsers() { … } // optional - might not need this
-    function findUserById() { … } // optional - might not need this
-})()*/
+var $usernameField // Text Field for Entering Username
+var $passwordField // Text Field for Entering Password
+var $firstNameField // Text Field for Entering First Name
+var $lastNameField // Text Field for Entering Last Name
+var $roleField // Dropdown Selection Menu for Selecting Role
+var $tableBody // Table Body of User Table
+var $createButton // Button for Creating New User
+var $updateButton // Button for Updating Attributes of Existing User
+var allUsersArray // Array of All Users
+var selectedUser // Currently Selected User (via Edit Button)
+var userService // Service for Interacting with Server
 
-var $usernameField
-var $passwordField
-var $firstNameField
-var $lastNameField
-var $roleField
-var $tableBody
-var $createButton
-var $updateButton
-var allUsersArray
-var selectedUser
-var userService
+// Create User Function
+
+/*
+Re-designed from Professor Annunziato's code to be table-agnostic and array-agnostic
+(user will be added to userArray and userArray will be rendered in table)
+for greater flexibility
+*/
 
 function addUser(table, userArray, user) {
     userService.createUser(user).then(function (actualUser) {
@@ -34,6 +26,8 @@ function addUser(table, userArray, user) {
         renderUsers(table, userArray)
     })
 }
+
+// Update User Function
 
 function updateUser() {
     selectedUser.username = $usernameField.val()
@@ -49,23 +43,46 @@ function updateUser() {
     })
 }
 
+// Render Users Function
+
+/*
+Re-designed from Professor Annunziato's code to be table-agnostic (the users present in userArray
+will be rendered in table) for greater flexibility
+*/
+
 function renderUsers(table, userArray) {
-    table.empty()
+
+    table.empty() // Clear Existing Contents of table
 
     for (var i = 0; i < userArray.length; i++) {
         var user = userArray[i]
+
         table.prepend(`<tr class="wbdv-template wbdv-user wbdv-hidden">
                            <td class="wbdv-username">${user.username}</td>
                            <td>${user.password}</td>
                            <td class="wbdv-first-name">${user.firstName}</td>
                            <td class="wbdv-last-name">${user.lastName}</td>
                            <td class="wbdv-role">${user.role}</td>
-                           <td class="wbdv-actions"><span class="pull-right">
-                               <button class="btn btn-outline-dark wbdv-button-remove" id="wbdv-button-remove-${i}"><i class="fa-2x fa fa-times wbdv-icon-remove" id="wbdv-icon-remove-${i}"> Remove</i></button>
-                               <button class="btn btn-outline-dark wbdv-button-edit" id="wbdv-button-edit-${user._id}"><i class="fa-2x fa fa-pencil wbdv-icon-edit" id="wbdv-icon-edit-${i}"> Edit</i></button>
-                           </span></td>
+                           <td class="wbdv-actions">
+                               <span class="pull-right">
+                                   <button class="btn btn-outline-dark wbdv-button-remove"
+                                           id="wbdv-button-remove-${i}">
+                                       <i class="fa-2x fa fa-times wbdv-icon-remove"
+                                          id="wbdv-icon-remove-${i}"> Remove
+                                       </i>
+                                   </button>
+                                   <button class="btn btn-outline-dark wbdv-button-edit"
+                                           id="wbdv-button-edit-${user._id}">
+                                       <i class="fa-2x fa fa-pencil wbdv-icon-edit"
+                                          id="wbdv-icon-edit-${i}"> Edit
+                                       </i>
+                                   </button>
+                               </span>
+                           </td>
                        </tr>`)
     }
+
+    // Remove Button and Remove User Function
 
     $(".wbdv-button-remove").click(function (event) {
         var removeButton = $(event.target)
@@ -77,6 +94,8 @@ function renderUsers(table, userArray) {
             renderUsers(table, userArray)
         })
     })
+
+    // Edit Button and Edit User Function
 
     $(".wbdv-button-edit").click(function (event) {
         var editButton = $(event.target)
@@ -91,7 +110,12 @@ function renderUsers(table, userArray) {
     })
 }
 
+// Main Function
+
 function main() {
+
+    // Initialize Controller Variables
+
     $usernameField = $(".wbdv-field-username")
     $passwordField = $(".wbdv-field-password")
     $firstNameField = $(".wbdv-field-firstName")
@@ -103,6 +127,8 @@ function main() {
     allUsersArray = []
     selectedUser = null
     userService = new AdminUserServiceClient()
+
+    // Create Button
 
     $createButton.click(function () {
         var newUser = {
@@ -120,7 +146,11 @@ function main() {
         $roleField.val("FACULTY")
     })
 
+    // Update Button
+
     $updateButton.click(updateUser)
+
+    // Render All Existing Users from Server
 
     userService.findAllUsers().then(function (allUsers) {
         allUsersArray = allUsers
