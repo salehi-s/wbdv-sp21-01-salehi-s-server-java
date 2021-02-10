@@ -24,11 +24,6 @@ var userArrayDummy = [
     {username: 'salehi.s', password: String.fromCharCode(160), firstName: 'Sina', lastName: 'Salehi', role: 'ADMIN'}
 ]
 
-var userDummy = {username: 'dummy.u', password: String.fromCharCode(160), firstName: 'User', lastName: 'Dummy', role: 'STUDENT'}
-
-var createButton = jQuery(".wbdv-button-create")
-createButton.click(function () {addUser(tableBody, userArrayDummy, userDummy)})
-
 var updateButton = jQuery(".wbdv-button-update")
 
 function addUser(table, userArray, user) {
@@ -63,3 +58,26 @@ function renderUsers(table, userArray) {
 }
 
 renderUsers(tableBody, userArrayDummy)
+
+var $usernameField = $(".wbdv-field-username")
+var $passwordField = $(".wbdv-field-password")
+var $firstNameField = $(".wbdv-field-firstName")
+var $lastNameField = $(".wbdv-field-lastName")
+var $roleField = $(".wbdv-field-role")
+
+var $createButton = $(".wbdv-button-create")
+$createButton.click(function () {
+    var newUser = {
+        username: $usernameField.val(),
+        password: $passwordField.val(),
+        firstName: $firstNameField.val(),
+        lastName: $lastNameField.val(),
+        role: $roleField.val()
+    }
+    addUser(tableBody, userArrayDummy, newUser)
+    $usernameField.val("")
+    $passwordField.val("")
+    $firstNameField.val("")
+    $lastNameField.val("")
+    $roleField.val("FACULTY")
+})
