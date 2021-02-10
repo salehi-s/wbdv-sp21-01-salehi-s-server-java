@@ -25,6 +25,7 @@ var $tableBody
 var $createButton
 var $updateButton
 var userArrayDummy
+var userService = new AdminUserServiceClient()
 
 function addUser(table, userArray, user) {
     userArray.push(user)
@@ -81,6 +82,8 @@ function main() {
         $lastNameField.val("")
         $roleField.val("FACULTY")
     })
+
+    userService.findAllUsers()
 }
 
 $(main)
