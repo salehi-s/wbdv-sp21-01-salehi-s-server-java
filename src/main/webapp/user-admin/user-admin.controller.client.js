@@ -81,3 +81,9 @@ $createButton.click(function () {
     $lastNameField.val("")
     $roleField.val("FACULTY")
 })
+
+function main() {
+
+}
+
+jQuery(main)
