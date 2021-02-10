@@ -1,28 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Document Head -->
+
 <head>
     <meta charset="UTF-8">
     <title>User Admin</title>
-    <link href="user-admin.style.client.css" rel="stylesheet"/>
-    <link href="../webapp.universal.stylesheet.css" rel="stylesheet"/>
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet"/>
-    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script src="../services/user-admin.service.client.js"></script>
+
+    <!-- Stylesheet Links -->
+
+    <link href="user-admin.style.client.css"
+          rel="stylesheet"/>
+    <link href="../webapp.universal.stylesheet.css"
+          rel="stylesheet"/>
+    <link href="../bootstrap/css/bootstrap.css"
+          rel="stylesheet"/>
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          rel="stylesheet"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+          crossorigin="anonymous"/>
+
+    <!-- JavaScript Scripts -->
+
     <script src="../services/user.service.client.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="user-admin.controller.client.js"></script>
 </head>
 
+<!-- Document Body -->
+
 <body>
 <div class="container-fluid">
+
+    <!-- Main Heading -->
+
     <div class="container-fluid">
         <h1>User Administration</h1>
     </div>
 
+    <!-- Main Table -->
+
     <table class="table">
+
+        <!-- Table Head -->
+
         <thead>
+
+        <!-- Table Attributes -->
+
         <tr>
             <th>Username</th>
             <th>Password</th>
@@ -32,22 +60,48 @@
             <th>&nbsp;</th>
         </tr>
 
+        <!-- Input Fields -->
+
         <tr class="wbdv-form">
-            <td><input id="usernameFld" class="form-control wbdv-field-username" title="Enter your username here" placeholder="Username"/></td>
-            <td><input id="passwordFld" class="form-control wbdv-field-password" title="Enter your password here" placeholder="Password"/></td>
-            <td><input id="firstNameFld" class="form-control wbdv-field-firstName" title="Enter your first name here" placeholder="First Name"/></td>
-            <td><input id="lastNameFld" class="form-control wbdv-field-lastName" title="Enter your last name here" placeholder="Last Name"/></td>
-            <td><select id="roleFld" class="form-control wbdv-field-role" title="Select your role within the university here">
+            <td><input id="usernameFld"
+                       class="form-control wbdv-field-username"
+                       title="Enter your username here"
+                       placeholder="Username"/></td>
+            <td><input id="passwordFld"
+                       class="form-control wbdv-field-password"
+                       title="Enter your password here"
+                       placeholder="Password"/></td>
+            <td><input id="firstNameFld"
+                       class="form-control wbdv-field-firstName"
+                       title="Enter your first name here"
+                       placeholder="First Name"/></td>
+            <td><input id="lastNameFld"
+                       class="form-control wbdv-field-lastName"
+                       title="Enter your last name here"
+                       placeholder="Last Name"/></td>
+            <td><select id="roleFld"
+                        class="form-control wbdv-field-role"
+                        title="Select your role within the university here">
                 <option value="FACULTY">Faculty</option>
                 <option value="STUDENT">Student</option>
                 <option value="ADMIN">Admin</option>
             </select></td>
-            <td><span class="pull-right" style="white-space: nowrap">
-                <button class="btn btn-outline-dark wbdv-button-create"><i class="fa-2x fa fa-plus wbdv-icon-create"> Create</i></button>
-                <button class="btn btn-outline-dark wbdv-button-update"><i class="fa-2x fa fa-check wbdv-icon-update"> Update</i></button>
+
+            <!-- Create and Update Buttons -->
+
+            <td><span class="pull-right"
+                      style="white-space: nowrap">
+                <button class="btn btn-outline-dark wbdv-button-create">
+                    <i class="fa-2x fa fa-plus wbdv-icon-create"> Create</i>
+                </button>
+                <button class="btn btn-outline-dark wbdv-button-update">
+                    <i class="fa-2x fa fa-check wbdv-icon-update"> Update</i>
+                </button>
             </span></td>
         </tr>
         </thead>
+
+        <!-- Table Body -->
 
         <tbody class="wbdv-tbody">
         </tbody>
