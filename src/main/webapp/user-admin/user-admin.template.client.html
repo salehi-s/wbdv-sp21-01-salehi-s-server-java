@@ -33,12 +33,66 @@
 <!-- Document Body -->
 
 <body>
+
+<div class="container-fluid">
+    <!-- Navigation Bar (Top of Page) Start -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html">NEUcourses</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Course List (Home)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../user-admin/user-admin.template.client.html">User Administration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../profile/profile.template.client.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login/login.template.client.html">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation Bar (Top of Page) End -->
+</div>
+
 <div class="container-fluid">
 
     <!-- Main Heading -->
 
     <div class="container-fluid">
         <h1>User Administration</h1>
+    </div>
+
+    <!-- Instructions -->
+
+    <div class="container-fluid">
+        <h5>Instructions:</h5>
+    </div>
+
+    <div class="container-fluid">
+        <span class="instruction">
+            <button class="btn btn-sm btn-outline-dark">
+                <i class="fa-2x fa fa-plus wbdv-icon-create"></i>
+            </button> Create New User
+        </span>
+        <span class="instruction">
+            <button class="btn btn-sm btn-outline-dark">
+                <i class="fa-2x fa fa-check wbdv-icon-update"></i>
+            </button> Update User Attributes
+        </span>
+        <span class="instruction">
+            <button class="btn btn-sm btn-outline-dark">
+                <i class="fa-2x fa fa-times wbdv-icon-remove"></i>
+            </button> Remove User
+        </span>
+        <span class="instruction">
+            <button class="btn btn-sm btn-outline-dark">
+                <i class="fa-2x fa fa-pencil wbdv-icon-edit"></i>
+            </button> Select User to Edit
+        </span>
     </div>
 
     <!-- Main Table -->
@@ -92,10 +146,10 @@
             <td><span class="pull-right"
                       style="white-space: nowrap">
                 <button class="btn btn-sm btn-outline-dark wbdv-button-create">
-                    <i class="fa-2x fa fa-plus wbdv-icon-create"> Create</i>
+                    <i class="fa-2x fa fa-plus wbdv-icon-create"></i>
                 </button>
                 <button class="btn btn-sm btn-outline-dark wbdv-button-update">
-                    <i class="fa-2x fa fa-check wbdv-icon-update"> Update</i>
+                    <i class="fa-2x fa fa-check wbdv-icon-update"></i>
                 </button>
             </span></td>
         </tr>

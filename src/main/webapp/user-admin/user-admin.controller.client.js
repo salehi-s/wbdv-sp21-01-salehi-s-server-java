@@ -76,13 +76,13 @@ function renderUsers(table, userArray) {
                                    <button class="btn btn-sm btn-outline-dark wbdv-button-remove"
                                            id="wbdv-button-remove-${i}">
                                        <i class="fa-2x fa fa-times wbdv-icon-remove"
-                                          id="wbdv-icon-remove-${i}"> Remove
+                                          id="wbdv-icon-remove-${i}">
                                        </i>
                                    </button>
                                    <button class="btn btn-sm btn-outline-dark wbdv-button-edit"
                                            id="wbdv-button-edit-${user._id}">
                                        <i class="fa-2x fa fa-pencil wbdv-icon-edit"
-                                          id="wbdv-icon-edit-${i}"> Edit
+                                          id="wbdv-icon-edit-${i}">
                                        </i>
                                    </button>
                                </span>
