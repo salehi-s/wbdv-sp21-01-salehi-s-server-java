@@ -2,7 +2,7 @@ package com.example.wbdvsp2103salehisserverjava.models;
 
 public class Widget {
   private String name;
-  private Integer id;
+  private Long id;
   private String type;
   private Integer widgetOrder;
   private String text;
@@ -17,7 +17,7 @@ public class Widget {
   private String value;
 
   public Widget(String name,
-                Integer id,
+                Long id,
                 String type,
                 Integer widgetOrder,
                 String text,
@@ -57,11 +57,11 @@ public class Widget {
     this.name = name;
   }
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

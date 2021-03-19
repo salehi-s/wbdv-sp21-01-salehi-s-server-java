@@ -1,14 +1,16 @@
 package com.example.wbdvsp2103salehisserverjava.services;
 
 import com.example.wbdvsp2103salehisserverjava.models.Widget;
+
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class WidgetService {
   private List<Widget> widgets = new ArrayList<Widget>();
   {
     Widget w1 = new Widget("Widget1",
-                           1,
+                           1L,
                            "HEADING",
                            1,
                            "Welcome",
@@ -22,7 +24,7 @@ public class WidgetService {
                            "",
                            "initVal");
     Widget w2 = new Widget("Widget2",
-                           2,
+                           2L,
                            "LIST",
                            2,
                            "WidgetList",
@@ -36,7 +38,7 @@ public class WidgetService {
                            "",
                            "initVal");
     Widget w3 = new Widget("Widget3",
-                           3,
+                           3L,
                            "PARAGRAPH",
                            3,
                            "P1",
@@ -56,26 +58,34 @@ public class WidgetService {
   }
 
   public Widget createWidget(String tid, Widget widget) {
-    return new Widget();
+    Long id = (new Date()).getTime();
+    widget.setId(id);
+    widgets.add(widget);
+    return widget;
   }
 
   public List<Widget> findWidgetsForTopic(String tid) {
     return new ArrayList<Widget>();
   }
 
-  public int updateWidget(String wid, Widget widget) {
-    return 0;
+  public int updateWidget(Long wid, Widget widget) {
+    return -1;
   }
 
-  public int deleteWidget(String wid) {
-    return 0;
+  public int deleteWidget(Long wid) {
+    return -1;
   }
 
   public List<Widget> findAllWidgets() {
-    return new ArrayList<Widget>();
+    return widgets;
   }
 
-  public Widget findWidgetById(String wid) {
-    return new Widget();
+  public Widget findWidgetById(Long wid) {
+    for (Widget w : widgets) {
+      if (w.getId().equals(wid)) {
+        return w;
+      }
+    }
+    return null;
   }
 }
