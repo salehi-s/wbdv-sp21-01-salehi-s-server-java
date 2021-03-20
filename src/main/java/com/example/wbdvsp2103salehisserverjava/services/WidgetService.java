@@ -2,10 +2,13 @@ package com.example.wbdvsp2103salehisserverjava.services;
 
 import com.example.wbdvsp2103salehisserverjava.models.Widget;
 
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
 
+@Service
 public class WidgetService {
   private List<Widget> widgets = new ArrayList<Widget>();
   {
@@ -69,11 +72,25 @@ public class WidgetService {
   }
 
   public int updateWidget(Long wid, Widget widget) {
-    return -1;
+    for (Widget w : widgets) {
+      if (w.getId().equals(wid)) {
+        int wIndex = widgets.indexOf(w);
+        widgets.remove(w);
+        widgets.add(wIndex, widget);
+        return 1;
+      }
+    }
+    return 0;
   }
 
   public int deleteWidget(Long wid) {
-    return -1;
+    for (Widget w : widgets) {
+      if (w.getId().equals(wid)) {
+        widgets.remove(w);
+        return 1;
+      }
+    }
+    return 0;
   }
 
   public List<Widget> findAllWidgets() {

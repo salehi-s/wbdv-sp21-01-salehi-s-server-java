@@ -7,37 +7,45 @@ import java.util.List;
 import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 public class WidgetController {
-  WidgetService service = new WidgetService();
+  @Autowired
+  WidgetService service;
 
-  @PostMapping
-  public Widget createWidget(String tid, Widget widget) {
-    return new Widget();
+  @PostMapping("/api/topics/{tid}/widgets")
+  public Widget createWidget(@PathVariable("tid") String tid, Widget widget) {
+    return service.createWidget(tid, widget);
   }
 
-  @GetMapping
-  public List<Widget> findWidgetsForTopic(String tid) {
-    return new ArrayList<Widget>();
+  @GetMapping("/api/topics/{tid}/widgets")
+  public List<Widget> findWidgetsForTopic(@PathVariable("tid") String tid) {
+    return service.findWidgetsForTopic(tid);
   }
 
-  @PutMapping
-  public int updateWidget(String wid, Widget widget) {
-    return -1;
+  @PutMapping("/api/widgets/{wid}")
+  public int updateWidget(@PathVariable("wid") Long wid, Widget widget) {
+    return service.updateWidget(wid, widget);
   }
 
-  @DeleteMapping
-  public int deleteWidget(String wid) {
-    return -1;
+  @DeleteMapping("/api/widgets/{wid}")
+  public int deleteWidget(@PathVariable("wid") Long wid) {
+    return service.deleteWidget(wid);
   }
 
-  @GetMapping
+  @GetMapping("/api/widgets")
   public List<Widget> findAllWidgets() {
     return service.findAllWidgets();
+  }
+
+  @GetMapping("/api/widgets/{wid}")
+  public Widget findWidgetById(@PathVariable("wid") Long wid) {
+    return service.findWidgetById(wid);
   }
 }
