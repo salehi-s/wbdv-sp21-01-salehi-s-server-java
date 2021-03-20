@@ -3,6 +3,7 @@ package com.example.wbdvsp2103salehisserverjava.models;
 public class Widget {
   private String name;
   private Long id;
+  private String topicId;
   private String type;
   private Integer widgetOrder;
   private String text;
@@ -18,6 +19,7 @@ public class Widget {
 
   public Widget(String name,
                 Long id,
+                String topicId,
                 String type,
                 Integer widgetOrder,
                 String text,
@@ -32,6 +34,7 @@ public class Widget {
                 String value) {
     this.name = name;
     this.id = id;
+    this.topicId = topicId;
     this.type = type;
     this.widgetOrder = widgetOrder;
     this.text = text;
@@ -63,6 +66,14 @@ public class Widget {
 
   public void setId(Long id) {
     this.id = id;
+  }
+
+  public String getTopicId() {
+    return topicId;
+  }
+
+  public void setTopicId(String topicId) {
+    this.topicId = topicId;
   }
 
   public String getType() {

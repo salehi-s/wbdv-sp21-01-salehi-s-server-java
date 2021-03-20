@@ -14,6 +14,7 @@ public class WidgetService {
   {
     Widget w1 = new Widget("Widget1",
                            1L,
+                           "topic1",
                            "HEADING",
                            1,
                            "Welcome",
@@ -28,6 +29,7 @@ public class WidgetService {
                            "initVal");
     Widget w2 = new Widget("Widget2",
                            2L,
+                           "topic2",
                            "LIST",
                            2,
                            "WidgetList",
@@ -42,6 +44,7 @@ public class WidgetService {
                            "initVal");
     Widget w3 = new Widget("Widget3",
                            3L,
+                           "topic3",
                            "PARAGRAPH",
                            3,
                            "P1",
@@ -68,7 +71,13 @@ public class WidgetService {
   }
 
   public List<Widget> findWidgetsForTopic(String tid) {
-    return new ArrayList<Widget>();
+    List<Widget> ws = new ArrayList<Widget>();
+    for (Widget w : widgets) {
+      if (w.getTopicId().equals(tid)) {
+        ws.add(w);
+      }
+    }
+    return ws;
   }
 
   public int updateWidget(Long wid, Widget widget) {
