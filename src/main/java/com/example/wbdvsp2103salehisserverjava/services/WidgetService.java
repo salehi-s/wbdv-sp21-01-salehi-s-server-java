@@ -81,11 +81,10 @@ public class WidgetService {
   }
 
   public int updateWidget(Long wid, Widget widget) {
-    for (Widget w : widgets) {
+    for (int i = 0; i < widgets.size(); i++) {
+      Widget w = widgets.get(i);
       if (w.getId().equals(wid)) {
-        int wIndex = widgets.indexOf(w);
-        widgets.remove(w);
-        widgets.add(wIndex, widget);
+        widgets.set(i, widget);
         return 1;
       }
     }
@@ -93,13 +92,18 @@ public class WidgetService {
   }
 
   public int deleteWidget(Long wid) {
-    for (Widget w : widgets) {
+    int index = -1;
+    for (int i = 0; i < widgets.size(); i++) {
+      Widget w = widgets.get(i);
       if (w.getId().equals(wid)) {
-        widgets.remove(w);
-        return 1;
+        index = i;
       }
     }
-    return 0;
+    if (index >= 0) {
+      widgets.remove(index);
+      return 1;
+    }
+    return -1;
   }
 
   public List<Widget> findAllWidgets() {

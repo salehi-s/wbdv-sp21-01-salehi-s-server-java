@@ -4,7 +4,6 @@ import com.example.wbdvsp2103salehisserverjava.models.Widget;
 import com.example.wbdvsp2103salehisserverjava.services.WidgetService;
 
 import java.util.List;
-import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -22,7 +22,9 @@ public class WidgetController {
   WidgetService service;
 
   @PostMapping("/api/topics/{tid}/widgets")
-  public Widget createWidget(@PathVariable("tid") String tid, Widget widget) {
+  public Widget createWidget(@PathVariable("tid") String tid,
+                             @RequestBody Widget widget) {
+    widget.setTopicId(tid);
     return service.createWidget(tid, widget);
   }
 
@@ -32,7 +34,8 @@ public class WidgetController {
   }
 
   @PutMapping("/api/widgets/{wid}")
-  public int updateWidget(@PathVariable("wid") Long wid, Widget widget) {
+  public int updateWidget(@PathVariable("wid") Long wid,
+                          @RequestBody Widget widget) {
     return service.updateWidget(wid, widget);
   }
 
