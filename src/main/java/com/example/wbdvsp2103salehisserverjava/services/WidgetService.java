@@ -14,47 +14,47 @@ public class WidgetService {
   {
     Widget w1 = new Widget("Widget1",
                            1L,
-                           "topic1",
+                           "6056807cbf36af0017e33f23",
                            "HEADING",
                            1,
                            "Welcome",
                            "#",
                            "#",
                            "#",
-                           9,
-                           3,
-                           3,
-                           "cssClass",
+                           1,
+                           1,
+                           1,
+                           "",
                            "",
                            "initVal");
     Widget w2 = new Widget("Widget2",
                            2L,
-                           "topic2",
-                           "LIST",
+                           "6056807cbf36af0017e33f23",
+                           "PARAGRAPH",
                            2,
-                           "WidgetList",
+                           "LoremIpsum",
                            "#",
                            "#",
                            "#",
-                           16,
-                           4,
-                           4,
-                           "cssClass",
+                           2,
+                           2,
+                           2,
+                           "",
                            "",
                            "initVal");
     Widget w3 = new Widget("Widget3",
                            3L,
-                           "topic3",
-                           "PARAGRAPH",
+                           "6056807cbf36af0017e33f23",
+                           "HEADING",
                            3,
-                           "P1",
+                           "WebDev",
                            "#",
                            "#",
                            "#",
-                           25,
-                           5,
-                           5,
-                           "cssClass",
+                           3,
+                           3,
+                           3,
+                           "",
                            "",
                            "initVal");
 
@@ -103,7 +103,7 @@ public class WidgetService {
       widgets.remove(index);
       return 1;
     }
-    return -1;
+    return 0;
   }
 
   public List<Widget> findAllWidgets() {
