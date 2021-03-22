@@ -12,6 +12,7 @@ import java.util.Date;
 public class WidgetService {
   private List<Widget> widgets = new ArrayList<Widget>();
   {
+    // Starter Widgets
     Widget w1 = new Widget("Widget1",
                            1L,
                            "6056807cbf36af0017e33f23",

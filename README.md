@@ -1,7 +1,6 @@
 Sina Salehi</br>
 CS5610 - Web Development</br>
 Professor Annunziato</br>
-Assignment 1 (Static Base) and 2 (User Administration)
 
 <h1>Application Pages</h1>
 
@@ -24,10 +23,9 @@ You may navigate to Profile by pressing "Profile" at the top of the page.
 
 <h3>Course Editor</h3>
 
-From any of the course editor pages for any of the courses listed on Course List (Home), you may navigate to Course List (Home) by pressing "NEUcourses" or "Course List (Home)" at the top of the page.
-You may navigate to User Administration by pressing "User Administration" at the top of the page.
-You may navigate to Profile by pressing "Profile" at the top of the page.
-You may navigate to Log In by pressing "Log In" at the top of the page.
+At Course Editor, you may access the modules, lessons, topics, and widgets available for the currently selected course.
+Use the plus icons next to each section to add a new module, lesson, topic, or widget.
+You may navigate to Course List by pressing the X icon in the upper-left corner of the page.
 
 <h3>Profile</h3>
 
