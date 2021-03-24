@@ -1,9 +1,9 @@
 package com.example.wbdvsp2103salehisserverjava.controllers;
 
+import java.util.List;
+
 import com.example.wbdvsp2103salehisserverjava.models.Widget;
 import com.example.wbdvsp2103salehisserverjava.services.WidgetService;
-
-import java.util.List;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;

@@ -1,12 +1,12 @@
 package com.example.wbdvsp2103salehisserverjava.services;
 
-import com.example.wbdvsp2103salehisserverjava.models.Widget;
-
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
+
+import com.example.wbdvsp2103salehisserverjava.models.Widget;
+
+import org.springframework.stereotype.Service;
 
 @Service
 public class WidgetService {
@@ -18,7 +18,7 @@ public class WidgetService {
                            "6056807cbf36af0017e33f23",
                            "HEADING",
                            1,
-                           "Welcome",
+                           "Welcome to NEUCourses",
                            "#",
                            "#",
                            "#",
@@ -33,7 +33,7 @@ public class WidgetService {
                            "6056807cbf36af0017e33f23",
                            "PARAGRAPH",
                            2,
-                           "LoremIpsum",
+                           "Lorem Ipsum",
                            "#",
                            "#",
                            "#",
@@ -48,7 +48,7 @@ public class WidgetService {
                            "6056807cbf36af0017e33f23",
                            "HEADING",
                            3,
-                           "WebDev",
+                           "CS5610 (Web Development)",
                            "#",
                            "#",
                            "#",
@@ -82,7 +82,7 @@ public class WidgetService {
   }
 
   public int updateWidget(Long wid, Widget widget) {
-    for (int i = 0; i < widgets.size(); i++) {
+    for (int i = 0 ; i < widgets.size() ; i++) {
       Widget w = widgets.get(i);
       if (w.getId().equals(wid)) {
         widgets.set(i, widget);
