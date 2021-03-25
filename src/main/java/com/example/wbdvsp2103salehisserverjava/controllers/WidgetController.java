@@ -21,35 +21,35 @@ public class WidgetController {
   @Autowired
   WidgetService service;
 
-  @PostMapping("https://salty-springs-12156.herokuapp.com/api/topics/{tid}/widgets")
+  @PostMapping("/api/topics/{tid}/widgets")
   public Widget createWidget(@PathVariable("tid") String tid,
                              @RequestBody Widget widget) {
     widget.setTopicId(tid);
     return service.createWidget(tid, widget);
   }
 
-  @GetMapping("https://salty-springs-12156.herokuapp.com/api/topics/{tid}/widgets")
+  @GetMapping("/api/topics/{tid}/widgets")
   public List<Widget> findWidgetsForTopic(@PathVariable("tid") String tid) {
     return service.findWidgetsForTopic(tid);
   }
 
-  @PutMapping("https://salty-springs-12156.herokuapp.com/api/widgets/{wid}")
+  @PutMapping("/api/widgets/{wid}")
   public int updateWidget(@PathVariable("wid") Long wid,
                           @RequestBody Widget widget) {
     return service.updateWidget(wid, widget);
   }
 
-  @DeleteMapping("https://salty-springs-12156.herokuapp.com/api/widgets/{wid}")
+  @DeleteMapping("/api/widgets/{wid}")
   public int deleteWidget(@PathVariable("wid") Long wid) {
     return service.deleteWidget(wid);
   }
 
-  @GetMapping("https://salty-springs-12156.herokuapp.com/api/widgets")
+  @GetMapping("/api/widgets")
   public List<Widget> findAllWidgets() {
     return service.findAllWidgets();
   }
 
-  @GetMapping("https://salty-springs-12156.herokuapp.com/api/widgets/{wid}")
+  @GetMapping("/api/widgets/{wid}")
   public Widget findWidgetById(@PathVariable("wid") Long wid) {
     return service.findWidgetById(wid);
   }
