@@ -34,7 +34,8 @@ public class WidgetService {
                            1,
                            "",
                            "",
-                           "initVal");
+                           "initVal",
+                           true);
     Widget w2 = new Widget("Widget2",
                            2L,
                            "6056807cbf36af0017e33f23",
@@ -49,7 +50,8 @@ public class WidgetService {
                            2,
                            "",
                            "",
-                           "initVal");
+                           "initVal",
+                           false);
     Widget w3 = new Widget("Widget3",
                            3L,
                            "6056807cbf36af0017e33f23",
@@ -64,7 +66,8 @@ public class WidgetService {
                            3,
                            "",
                            "",
-                           "initVal");
+                           "initVal",
+                           true);
 
     widgets.add(w1);
     widgets.add(w2);
