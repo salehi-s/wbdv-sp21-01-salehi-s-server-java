@@ -1,8 +1,21 @@
 package com.example.wbdvsp2103salehisserverjava.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+@Entity
+@Table(name = "widgets")
 public class Widget {
+
   private String name;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
   private String topicId;
   private String type;
   private Integer widgetOrder;
@@ -172,3 +185,24 @@ public class Widget {
     this.value = value;
   }
 }
+
+/*
+create table widgets (
+       id bigint not null auto_increment,
+        css_class varchar(255),
+        height integer,
+        href varchar(255),
+        name varchar(255),
+        size integer,
+        src varchar(255),
+        style varchar(255),
+        text varchar(255),
+        topic_id varchar(255),
+        type varchar(255),
+        url varchar(255),
+        value varchar(255),
+        widget_order integer,
+        width integer,
+        primary key (id)
+    ) engine = InnoDB
+*/
