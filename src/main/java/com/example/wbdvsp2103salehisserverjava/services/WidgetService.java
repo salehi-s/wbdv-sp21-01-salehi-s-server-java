@@ -5,11 +5,18 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import com.example.wbdvsp2103salehisserverjava.models.Widget;
+import com.example.wbdvsp2103salehisserverjava.repositories.WidgetRepository;
 
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 public class WidgetService {
+
+  @Autowired
+  WidgetRepository repository;
+
+  /*
   private List<Widget> widgets = new ArrayList<Widget>();
   {
     // Starter Widgets
@@ -63,15 +70,21 @@ public class WidgetService {
     widgets.add(w2);
     widgets.add(w3);
   }
+  */
 
   public Widget createWidget(String tid, Widget widget) {
+    /*
     Long id = (new Date()).getTime();
     widget.setId(id);
     widgets.add(widget);
     return widget;
+    */
+
+    return repository.save(widget);
   }
 
   public List<Widget> findWidgetsForTopic(String tid) {
+    /*
     List<Widget> ws = new ArrayList<Widget>();
     for (Widget w : widgets) {
       if (w.getTopicId().equals(tid)) {
@@ -79,9 +92,13 @@ public class WidgetService {
       }
     }
     return ws;
+    */
+
+    return repository.findWidgetsForTopic(tid);
   }
 
   public int updateWidget(Long wid, Widget widget) {
+    /*
     for (int i = 0 ; i < widgets.size() ; i++) {
       Widget w = widgets.get(i);
       if (w.getId().equals(wid)) {
@@ -90,9 +107,20 @@ public class WidgetService {
       }
     }
     return 0;
+    */
+
+    Widget originalWidget = findWidgetById(wid);
+
+    originalWidget.setType(widget.getType());
+    originalWidget.setText(widget.getText());
+    originalWidget.setSize(widget.getSize());
+
+    repository.save(originalWidget);
+    return 1;
   }
 
   public int deleteWidget(Long wid) {
+    /*
     int index = -1;
     for (int i = 0; i < widgets.size(); i++) {
       Widget w = widgets.get(i);
@@ -105,18 +133,30 @@ public class WidgetService {
       return 1;
     }
     return 0;
+    */
+
+    repository.deleteById(wid);
+    return 1;
   }
 
   public List<Widget> findAllWidgets() {
-    return widgets;
+    // return widgets;
+    // return (List<Widget>)repository.findAll();
+
+    return repository.findAllWidgets();
   }
 
   public Widget findWidgetById(Long wid) {
+    /*
     for (Widget w : widgets) {
       if (w.getId().equals(wid)) {
         return w;
       }
     }
     return null;
+    */
+    // return repository.findById(wid).get();
+
+    return repository.findWidgetById(wid);
   }
 }
