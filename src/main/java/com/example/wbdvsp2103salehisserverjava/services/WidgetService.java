@@ -16,65 +16,6 @@ public class WidgetService {
   @Autowired
   WidgetRepository repository;
 
-  /*
-  private List<Widget> widgets = new ArrayList<Widget>();
-  {
-    // Starter Widgets
-    Widget w1 = new Widget("Widget1",
-                           1L,
-                           "6056807cbf36af0017e33f23",
-                           "HEADING",
-                           1,
-                           "Welcome to NEUCourses",
-                           "#",
-                           "#",
-                           "#",
-                           1,
-                           1,
-                           1,
-                           "",
-                           "",
-                           "initVal",
-                           true);
-    Widget w2 = new Widget("Widget2",
-                           2L,
-                           "6056807cbf36af0017e33f23",
-                           "PARAGRAPH",
-                           2,
-                           "Lorem Ipsum",
-                           "#",
-                           "#",
-                           "#",
-                           2,
-                           2,
-                           2,
-                           "",
-                           "",
-                           "initVal",
-                           false);
-    Widget w3 = new Widget("Widget3",
-                           3L,
-                           "6056807cbf36af0017e33f23",
-                           "HEADING",
-                           3,
-                           "CS5610 (Web Development)",
-                           "#",
-                           "#",
-                           "#",
-                           3,
-                           3,
-                           3,
-                           "",
-                           "",
-                           "initVal",
-                           true);
-
-    widgets.add(w1);
-    widgets.add(w2);
-    widgets.add(w3);
-  }
-  */
-
   public Widget createWidget(String tid, Widget widget) {
     /*
     Long id = (new Date()).getTime();
@@ -114,22 +55,54 @@ public class WidgetService {
 
     Widget originalWidget = findWidgetById(wid);
 
-    originalWidget.setName(widget.getName());
-    originalWidget.setId(widget.getId());
-    originalWidget.setTopicId(widget.getTopicId());
-    originalWidget.setType(widget.getType());
-    originalWidget.setWidgetOrder(widget.getWidgetOrder());
-    originalWidget.setText(widget.getText());
-    originalWidget.setSrc(widget.getSrc());
-    originalWidget.setUrl(widget.getUrl());
-    originalWidget.setHref(widget.getHref());
-    originalWidget.setSize(widget.getSize());
-    originalWidget.setWidth(widget.getWidth());
-    originalWidget.setHeight(widget.getHeight());
-    originalWidget.setCssClass(widget.getCssClass());
-    originalWidget.setStyle(widget.getStyle());
-    originalWidget.setValue(widget.getValue());
-    originalWidget.setOrdered(widget.getOrdered());
+    if (widget.getName() != null) {
+      originalWidget.setName(widget.getName());
+    }
+    if (widget.getId() != null) {
+      originalWidget.setId(widget.getId());
+    }
+    if (widget.getTopicId() != null) {
+      originalWidget.setTopicId(widget.getTopicId());
+    }
+    if (widget.getType() != null) {
+      originalWidget.setType(widget.getType());
+    }
+    if (widget.getWidgetOrder() != null) {
+      originalWidget.setWidgetOrder(widget.getWidgetOrder());
+    }
+    if (widget.getText() != null) {
+      originalWidget.setText(widget.getText());
+    }
+    if (widget.getSrc() != null) {
+      originalWidget.setSrc(widget.getSrc());
+    }
+    if (widget.getUrl() != null) {
+      originalWidget.setUrl(widget.getUrl());
+    }
+    if (widget.getHref() != null) {
+      originalWidget.setHref(widget.getHref());
+    }
+    if (widget.getSize() != null) {
+      originalWidget.setSize(widget.getSize());
+    }
+    if (widget.getWidth() != null) {
+      originalWidget.setWidth(widget.getWidth());
+    }
+    if (widget.getHeight() != null) {
+      originalWidget.setHeight(widget.getHeight());
+    }
+    if (widget.getCssClass() != null) {
+      originalWidget.setCssClass(widget.getCssClass());
+    }
+    if (widget.getStyle() != null) {
+      originalWidget.setStyle(widget.getStyle());
+    }
+    if (widget.getValue() != null) {
+      originalWidget.setValue(widget.getValue());
+    }
+    if (widget.getOrdered() != null) {
+      originalWidget.setOrdered(widget.getOrdered());
+    }
 
     repository.save(originalWidget);
     return 1;
@@ -156,7 +129,9 @@ public class WidgetService {
   }
 
   public List<Widget> findAllWidgets() {
-    // return widgets;
+    /*
+    return widgets;
+    */
     // return (List<Widget>)repository.findAll();
 
     return repository.findAllWidgets();

@@ -66,6 +66,21 @@ public class Widget {
   }
 
   public Widget() {
+    this.name = "New Widget";
+    this.topicId = "6056807cbf36af0017e33f23";
+    this.type = "HEADING";
+    this.widgetOrder = null;
+    this.text = "Widget Text";
+    this.src = "https://upload.wikimedia.org/wikipedia/en/b/bd/Northeastern_University_seal.svg";
+    this.url = "https://upload.wikimedia.org/wikipedia/en/b/bd/Northeastern_University_seal.svg";
+    this.href = "https://upload.wikimedia.org/wikipedia/en/b/bd/Northeastern_University_seal.svg";
+    this.size = 1;
+    this.width = 100;
+    this.height = 100;
+    this.cssClass = null;
+    this.style = null;
+    this.value = "initialValue";
+    this.ordered = false;
   }
 
   public String getName() {
@@ -196,24 +211,3 @@ public class Widget {
     this.ordered = ordered;
   }
 }
-
-/*
-create table widgets (
-       id bigint not null auto_increment,
-        css_class varchar(255),
-        height integer,
-        href varchar(255),
-        name varchar(255),
-        size integer,
-        src varchar(255),
-        style varchar(255),
-        text varchar(255),
-        topic_id varchar(255),
-        type varchar(255),
-        url varchar(255),
-        value varchar(255),
-        widget_order integer,
-        width integer,
-        primary key (id)
-    ) engine = InnoDB
-*/
