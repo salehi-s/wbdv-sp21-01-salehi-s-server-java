@@ -114,9 +114,22 @@ public class WidgetService {
 
     Widget originalWidget = findWidgetById(wid);
 
+    originalWidget.setName(widget.getName());
+    originalWidget.setId(widget.getId());
+    originalWidget.setTopicId(widget.getTopicId());
     originalWidget.setType(widget.getType());
+    originalWidget.setWidgetOrder(widget.getWidgetOrder());
     originalWidget.setText(widget.getText());
+    originalWidget.setSrc(widget.getSrc());
+    originalWidget.setUrl(widget.getUrl());
+    originalWidget.setHref(widget.getHref());
     originalWidget.setSize(widget.getSize());
+    originalWidget.setWidth(widget.getWidth());
+    originalWidget.setHeight(widget.getHeight());
+    originalWidget.setCssClass(widget.getCssClass());
+    originalWidget.setStyle(widget.getStyle());
+    originalWidget.setValue(widget.getValue());
+    originalWidget.setOrdered(widget.getOrdered());
 
     repository.save(originalWidget);
     return 1;
