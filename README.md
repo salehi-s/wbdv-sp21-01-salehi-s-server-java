@@ -24,7 +24,7 @@ You may navigate to Profile by pressing "Profile" at the top of the page.
 <h3>Course Editor</h3>
 
 At Course Editor, you may access the modules, lessons, topics, and widgets available for the currently selected course.
-Use the plus icons next to each section to add a new module, lesson, topic, or widget.
+Use the plus icons located next to each section to add a new module, lesson, topic, or widget.
 You may navigate to Course List by pressing the X icon in the upper-left corner of the page.
 
 <h3>Profile</h3>
